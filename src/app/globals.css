@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --background: #f8faf7;
+  --foreground: #1f2933;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(255, 209, 102, 0.22), transparent 30rem),
+    radial-gradient(circle at bottom right, rgba(100, 181, 246, 0.18), transparent 26rem),
+    var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+@layer components {
+  .btn-primary {
+    @apply rounded-lg bg-ink px-5 py-3 text-center font-black text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-700 focus:outline-none focus:ring-4 focus:ring-sky/30;
+  }
+
+  .btn-secondary {
+    @apply rounded-lg bg-coral px-4 py-2 font-black text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-red-500 focus:outline-none focus:ring-4 focus:ring-coral/25;
+  }
+
+  .btn-ghost {
+    @apply rounded-lg border border-slate-300 bg-white px-5 py-3 text-center font-black text-ink transition hover:bg-slate-100 focus:outline-none focus:ring-4 focus:ring-slate-200;
+  }
+
+  .input {
+    @apply w-full rounded-lg border-slate-300 bg-white px-3 py-3 text-base font-semibold text-ink shadow-sm focus:border-sky focus:ring-sky;
+  }
+
+  .badge {
+    @apply rounded-md bg-white px-3 py-2 text-sm font-bold text-ink ring-1 ring-slate-200;
+  }
+}
